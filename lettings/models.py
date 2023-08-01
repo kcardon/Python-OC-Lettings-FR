@@ -1,12 +1,15 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinLengthValidator
 
-# Create your models here.
+# This module defines the Address and Letting models for the application.
 
 
 class Address(models.Model):
+    """
+    Model representing a physical address.
+    """
     class Meta:
-        verbose_name_plural = "Address"
+        verbose_name_plural = "Addresses"
     number = models.PositiveIntegerField(validators=[MaxValueValidator(9999)])
     street = models.CharField(max_length=64)
     city = models.CharField(max_length=64)
@@ -19,6 +22,9 @@ class Address(models.Model):
 
 
 class Letting(models.Model):
+    """
+    Model representing a property letting.
+    """
     title = models.CharField(max_length=256)
     address = models.OneToOneField(Address, on_delete=models.CASCADE)
 
