@@ -1,4 +1,5 @@
 from django.shortcuts import render
+
 """
 This module defines the views for displaying an index page and the templates
 handling 404 and 500 errors.
@@ -15,7 +16,7 @@ def index(request):
     Returns:
         HttpResponse object with the rendered template.
     """
-    return render(request, 'index.html')
+    return render(request, "index.html")
 
 
 def handler404(request, exception=None):
@@ -39,3 +40,8 @@ def handler500(request):
         HttpResponse object with the rendered template and status set to 500.
     """
     return render(request, "500.html", status=500)
+
+
+def trigger_500_error(request):
+    """This view raises an exception to trigger a 500 error for test cases."""
+    raise Exception("500-error")

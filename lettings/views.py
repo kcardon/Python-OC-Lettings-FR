@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Letting
+from django.http import Http404
 
 # This module defines the views for displaying a list of lettings and individual letting details.
 
@@ -15,8 +16,8 @@ def index(request):
         HttpResponse object with the rendered template.
     """
     lettings_list = Letting.objects.all()
-    context = {'lettings_list': lettings_list}
-    return render(request, 'lettings/index.html', context)
+    context = {"lettings_list": lettings_list}
+    return render(request, "lettings/index.html", context)
 
 
 def letting(request, letting_id):
@@ -30,9 +31,13 @@ def letting(request, letting_id):
     Returns:
         HttpResponse object with the rendered template.
     """
-    letting = Letting.objects.get(id=letting_id)
+    try:
+        letting = Letting.objects.get(id=letting_id)
+
+    except Letting.DoesNotExist:
+        raise Http404("Letting not found")
     context = {
-        'title': letting.title,
-        'address': letting.address,
+        "title": letting.title,
+        "address": letting.address,
     }
-    return render(request, 'lettings/letting.html', context)
+    return render(request, "lettings/letting.html", context)
