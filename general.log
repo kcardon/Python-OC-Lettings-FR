@@ -1,0 +1,20 @@
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): o4505680818077696.ingest.sentry.io:443
+https://o4505680818077696.ingest.sentry.io:443 "POST /api/4505680878043136/envelope/ HTTP/1.1" 200 0
+https://o4505680818077696.ingest.sentry.io:443 "POST /api/4505680878043136/envelope/ HTTP/1.1" 200 0
+https://o4505680818077696.ingest.sentry.io:443 "POST /api/4505680878043136/envelope/ HTTP/1.1" 200 0
+https://o4505680818077696.ingest.sentry.io:443 "POST /api/4505680878043136/envelope/ HTTP/1.1" 200 0
+https://o4505680818077696.ingest.sentry.io:443 "POST /api/4505680878043136/envelope/ HTTP/1.1" 200 0
+https://o4505680818077696.ingest.sentry.io:443 "POST /api/4505680878043136/envelope/ HTTP/1.1" 200 0
+https://o4505680818077696.ingest.sentry.io:443 "POST /api/4505680878043136/envelope/ HTTP/1.1" 200 0
+https://o4505680818077696.ingest.sentry.io:443 "POST /api/4505680878043136/envelope/ HTTP/1.1" 200 0
+https://o4505680818077696.ingest.sentry.io:443 "POST /api/4505680878043136/envelope/ HTTP/1.1" 200 0
+https://o4505680818077696.ingest.sentry.io:443 "POST /api/4505680878043136/envelope/ HTTP/1.1" 200 0
+https://o4505680818077696.ingest.sentry.io:443 "POST /api/4505680878043136/envelope/ HTTP/1.1" 200 0
+https://o4505680818077696.ingest.sentry.io:443 "POST /api/4505680878043136/envelope/ HTTP/1.1" 200 0
+https://o4505680818077696.ingest.sentry.io:443 "POST /api/4505680878043136/envelope/ HTTP/1.1" 200 0
+https://o4505680818077696.ingest.sentry.io:443 "POST /api/4505680878043136/envelope/ HTTP/1.1" 200 0
+https://o4505680818077696.ingest.sentry.io:443 "POST /api/4505680878043136/envelope/ HTTP/1.1" 200 0
+https://o4505680818077696.ingest.sentry.io:443 "POST /api/4505680878043136/envelope/ HTTP/1.1" 200 0
+C:\Users\Utilisateur\Documents\Boulot\Python\Formation DA Python\Projet 13\OC-Lettings\Python-OC-Lettings-FR\oc_lettings_site\settings.py changed, reloading.
+Using proactor: IocpProactor

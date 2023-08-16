@@ -5,6 +5,11 @@ from .models import Profile
 
 
 class ProfileViewsTestCase(TestCase):
+    """
+    Test cases for profile views and models.
+    Every test assert the correct status code and the template used.
+    """
+
     def setUp(self):
         # Création de données de test
         self.user = User.objects.create_user(
