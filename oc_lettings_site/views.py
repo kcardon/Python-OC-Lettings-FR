@@ -1,9 +1,12 @@
 from django.shortcuts import render
+from django.urls import path
+import logging
 
 """
 This module defines the views for displaying an index page and the templates
 handling 404 and 500 errors.
 """
+logger = logging.getLogger(__name__)
 
 
 def index(request):
@@ -28,6 +31,7 @@ def handler404(request, exception=None):
     Returns:
         HttpResponse object with the rendered template and status set to 404.
     """
+    logger.warning(f"404 error: {request.path} | Exception: {exception}")
     return render(request, "404.html", status=404)
 
 
@@ -39,9 +43,14 @@ def handler500(request):
     Returns:
         HttpResponse object with the rendered template and status set to 500.
     """
+    logger.error("500 error encountered.")
     return render(request, "500.html", status=500)
 
 
 def trigger_500_error(request):
     """This view raises an exception to trigger a 500 error for test cases."""
     raise Exception("500-error")
+
+
+def trigger_error(request):
+    division_by_zero = 1 / 0

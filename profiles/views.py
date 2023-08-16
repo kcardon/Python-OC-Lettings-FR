@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from .models import Profile
 from django.http import Http404
+import logging
 
 # This module defines the views for displaying a list of profiles and individual profile details.
+
+logger = logging.getLogger(__name__)
 
 
 def index(request):
@@ -16,8 +19,12 @@ def index(request):
         HttpResponse object with the rendered template
         and the context containing the profiles list.
     """
+    try:
+        profiles_list = Profile.objects.all()
+    except Exception as e:
+        logger.error(f"Error retrieving profiles: {e}")
+        raise
 
-    profiles_list = Profile.objects.all()
     context = {"profiles_list": profiles_list}
     return render(request, "profiles/index.html", context)
 
@@ -38,7 +45,10 @@ def profile(request, username):
     try:
         profile = Profile.objects.get(user__username=username)
     except Profile.DoesNotExist:
+        logger.warning(f"Profile with username {username} doesn't exist.")
         raise Http404("Profile not found")
-
+    except Exception as e:
+        logger.error(f"Error fetching profile with username {username}: {e}")
+        raise
     context = {"profile": profile}
     return render(request, "profiles/profile.html", context)
