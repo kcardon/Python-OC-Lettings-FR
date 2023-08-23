@@ -4,6 +4,7 @@ import logging
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 from sentry_sdk.integrations.logging import LoggingIntegration
+import env
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -13,10 +14,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"
+SECRET_KEY = env.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["127.0.0.1"]
 
@@ -129,9 +130,8 @@ sentry_logging = LoggingIntegration(
     event_level=logging.WARNING,  # Send errors as events
 )
 
-
 sentry_sdk.init(
-    dsn="https://81d2c78becdd80feb880ebef46f16d4a@o4505680818077696.ingest.sentry.io/4505680878043136",
+    dsn=env.SENTRY_DSN,
     integrations=[DjangoIntegration(), sentry_logging],
     # Set traces_sample_rate to 1.0 to capture 100%
     # of transactions for performance monitoring.
