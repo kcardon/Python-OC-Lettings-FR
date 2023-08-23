@@ -18,8 +18,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env.SECRET_KEY
-
+# SECRET_KEY = env.SECRET_KEY
+os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -135,7 +135,8 @@ sentry_logging = LoggingIntegration(
 )
 
 sentry_sdk.init(
-    dsn=env.SENTRY_DSN,
+    # dsn=env.SENTRY_DSN,
+    dsn=os.environ.get("SENTRY_DSN"),
     integrations=[DjangoIntegration(), sentry_logging],
     # Set traces_sample_rate to 1.0 to capture 100%
     # of transactions for performance monitoring.
