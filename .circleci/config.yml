@@ -22,7 +22,7 @@ jobs:
           command: docker build -t ocr-lettings-app:latest .
       - run:
           name: Run tests inside Docker image
-          command: docker run ocr-lettings-app:latest pytest
+          command: docker run -e SECRET_KEY=${SECRET_KEY} ocr-lettings-app:latest pytest
       - run:
           name: Push Docker image to Heroku
           command: |
