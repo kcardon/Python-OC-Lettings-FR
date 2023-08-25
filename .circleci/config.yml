@@ -19,7 +19,7 @@ jobs:
       - checkout
       - run:
           name: Build Docker image
-          command: docker build -t ocr-lettings-app:latest
+          command: docker build -t ocr-lettings-app:latest .
       - run:
           name: Run tests inside Docker image
           command: docker run ocr-lettings-app:latest pytest
