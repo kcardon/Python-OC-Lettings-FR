@@ -18,8 +18,8 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Print working directory
-        command: pwd
+          name: Print working directory
+          command: pwd
 
       - run:
           name: Build Docker image
