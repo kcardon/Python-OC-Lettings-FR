@@ -18,6 +18,10 @@ jobs:
     steps:
       - checkout
       - run:
+        name: Print working directory
+        command: pwd
+
+      - run:
           name: Build Docker image
           command: docker build -t ocr-lettings-app:latest .
       - run:
