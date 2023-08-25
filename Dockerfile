@@ -12,5 +12,5 @@ WORKDIR /app
 COPY . /app
 
 # Installation des dépendances Python
-RUN pip install --upgrade pip && pip install -r Python-OC-Lettings-FR/requirements.txt
-CMD ["python", "Python-OC-Lettings-FR/manage.py", "runserver", "0.0.0.0:8000"]
+RUN pip install --upgrade pip && pip install -r requirements.txt
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

@@ -1,0 +1,9 @@
+.pytest_cache/
+.vscode/
+.env/
+.coveragerc
+.Python-OC-Lettings-FR/flake-report/
+.Python-OC-Lettings-FR/htmlcov/
+.Python-OC-Lettings-FR/git/
+.Python-OC-Lettings-FR/gitignore
+.Python-OC-Lettings-FR/pytest_cache/
