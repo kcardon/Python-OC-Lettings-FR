@@ -13,4 +13,4 @@ COPY . /app
 
 # Installation des dépendances Python
 RUN pip install --upgrade pip && pip install -r requirements.txt
-CMD ["gunicorn", "oc_lettings_site.wsgi:application", "--bind", "0.0.0.0:$PORT"]
+CMD gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:$PORT
