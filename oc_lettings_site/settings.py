@@ -7,7 +7,7 @@ from sentry_sdk.integrations.logging import LoggingIntegration
 
 try:
     import env
-except ImportError:
+except ModuleNotFoundError:
     pass
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
