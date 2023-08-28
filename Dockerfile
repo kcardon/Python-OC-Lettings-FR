@@ -13,4 +13,4 @@ COPY . /app
 
 # Installation des dépendances Python
 RUN pip install --upgrade pip && pip install -r requirements.txt
-CMD ["gunicorn", "ocr-lettings.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "lettings-app.wsgi:application", "--bind", "0.0.0.0:8000"]
