@@ -1,1 +1,1 @@
-web: gunicorn ocr-lettings.wsgi
+web: gunicorn oc_lettings_site.wsgi
