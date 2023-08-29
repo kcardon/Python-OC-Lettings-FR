@@ -18,8 +18,8 @@ jobs:
     steps:
       - checkout
       - run:
-        name: echo secret_key
-        command: echo ${SECRET_KEY}
+          name: echo secret_key
+          command: echo ${SECRET_KEY}
       - run:
           name: Build Docker image
           command: docker build --build-arg SECRET_KEY=${SECRET_KEY} -t lettings-app:latest .
