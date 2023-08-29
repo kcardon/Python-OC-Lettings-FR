@@ -5,6 +5,10 @@ FROM python:3
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+# Handling secret key
+ARG SECRET_KEY
+ENV SECRET_KEY=$SECRET_KEY
+
 # Définissez le répertoire de travail dans le conteneur
 WORKDIR /app
 
