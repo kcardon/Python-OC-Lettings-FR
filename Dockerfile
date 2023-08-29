@@ -12,5 +12,9 @@ WORKDIR /app
 COPY . /app
 
 # Installation des dépendances Python
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install --upgrade pip && pip install -r requirements.
+
+# Exécuter collectstatic
+RUN python manage.py collectstatic --noinput
+
 CMD gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:$PORT
