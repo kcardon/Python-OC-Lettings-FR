@@ -12,7 +12,7 @@ WORKDIR /app
 COPY . /app
 
 # Installation des dépendances Python
-RUN pip install --upgrade pip && pip install -r requirements.
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
 # Exécuter collectstatic
 RUN python manage.py collectstatic --noinput
