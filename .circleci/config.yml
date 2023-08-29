@@ -32,7 +32,7 @@ jobs:
             sudo curl https://cli-assets.heroku.com/install.sh | sh
             HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login
             HEROKU_API_KEY=${HEROKU_TOKEN} heroku config:set -a ocr-lettings SECRET_KEY=${SECRET_KEY}
-            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push -a ocr-lettings web SECRET_KEY=${SECRET_KEY}
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push -a ocr-lettings web
             HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release -a ocr-lettings web
 
 # Invoke jobs via workflows
