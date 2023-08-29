@@ -7,10 +7,10 @@ ENV PYTHONUNBUFFERED 1
 
 # Handling secret key
 ARG SECRET_KEY
-ENV TEST_KEY = "healkrj"
-RUN echo "TEST_KEY is: $TEST_KEY"
 ENV SECRET_KEY=$SECRET_KEY
+ENV SECRET_KEY_VAR=$SECRET_KEY
 RUN echo "SECRET_KEY is: $SECRET_KEY"
+RUN echo "SECRET_KEY_VAR is: $SECRET_KEY_VAR"
 
 # Définissez le répertoire de travail dans le conteneur
 WORKDIR /app

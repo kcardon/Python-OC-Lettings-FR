@@ -24,6 +24,9 @@ jobs:
           name: Run tests inside Docker image
           command: docker run -e SECRET_KEY=${SECRET_KEY} lettings-app:latest pytest
       - run:
+          name: echo secret_key
+          command: echo ${SECRET_KEY}
+      - run:
           name: Push Docker image to Heroku
           command: |
             sudo curl https://cli-assets.heroku.com/install.sh | sh
