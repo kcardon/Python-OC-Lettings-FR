@@ -5,13 +5,13 @@ import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 from sentry_sdk.integrations.logging import LoggingIntegration
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
-try:
-    import env
+"""
+import env
+SECRET_KEY = env.SECRET_KEY
+"""
 
-    SECRET_KEY = env.SECRET_KEY
-except ModuleNotFoundError:
-    pass
+SECRET_KEY = os.environ.get("SECRET_KEY")
+
 if not SECRET_KEY:
     raise ValueError("SECRET_KEY must be set as an environment variable!")
 
