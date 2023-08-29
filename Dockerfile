@@ -7,7 +7,7 @@ ENV PYTHONUNBUFFERED 1
 
 # Handling secret key
 ARG SECRET_KEY
-ENV SECRET_KEY=$SECRET_KEY
+ENV SECRET_KEY=$DJANGO_SECRET_KEY
 RUN echo "SECRET_KEY is: $SECRET_KEY"
 
 # Définissez le répertoire de travail dans le conteneur
