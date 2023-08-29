@@ -18225,9 +18225,9 @@ body {
   src: url("../assets/fonts/metropolis/Metropolis-Thin.otf");
   font-weight: 100;
   font-style: normal;
-} */
+}
 
-/* @font-face {
+@font-face {
   font-family: "Metropolis";
   src: url("../assets/fonts/metropolis/Metropolis-ThinItalic.otf");
   font-weight: 100;
