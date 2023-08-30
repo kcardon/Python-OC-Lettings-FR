@@ -39,7 +39,7 @@ jobs:
           name: Push and release Docker image to Heroku registry
           command: |
             docker push registry.heroku.com/lettings-app/web
-            heroku container:release web --app lettings-app
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release web --app lettings-app
       
   
 # Invoke jobs via workflows
