@@ -5,12 +5,15 @@ import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 from sentry_sdk.integrations.logging import LoggingIntegration
 
-"""
-import env
-SECRET_KEY = env.SECRET_KEY
-"""
 
+# Essayez d'obtenir SECRET_KEY depuis les variables d'environnement
 SECRET_KEY = os.environ.get("SECRET_KEY")
+
+if not SECRET_KEY:
+    try:
+        from env import SECRET_KEY
+    except ImportError:
+        raise ValueError("Failed to import SECRET_KEY from env.py!")
 
 if not SECRET_KEY:
     raise ValueError("SECRET_KEY must be set as an environment variable!")
@@ -26,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1", ".herokuapp.com"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".herokuapp.com"]
 
 
 # Application definition

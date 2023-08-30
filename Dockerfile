@@ -7,9 +7,7 @@ ENV PYTHONUNBUFFERED 1
 
 # Handling secret key
 ARG SECRET_KEY
-ARG env
 ENV SECRET_KEY=$SECRET_KEY
-ENV ENV = $env
 
 # Définissez le répertoire de travail dans le conteneur
 WORKDIR /app
