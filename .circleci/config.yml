@@ -27,14 +27,21 @@ jobs:
           name: echo secret_key
           command: echo ${SECRET_KEY}
       - run:
-          name: Push Docker image to Heroku
+          name: Install Heroku CLI
+          command: sudo curl https://cli-assets.heroku.com/install.sh | sh
+      - run:
+          name: Login to Heroku container registry
+          command: HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login
+      - run:
+          name: tag Docker image for heroku
+          command: docker tag lettings-app:latest registry.heroku.com/lettings-app/web
+      - run:
+          name: Push and release Docker image to Heroku registry
           command: |
-            sudo curl https://cli-assets.heroku.com/install.sh | sh
-            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login
-            HEROKU_API_KEY=${HEROKU_TOKEN} heroku config:set -a ocr-lettings SECRET_KEY=${SECRET_KEY}
-            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push -a ocr-lettings web
-            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release -a ocr-lettings web
-
+            docker push registry.heroku.com/lettings-app/web
+            heroku container:release web --app lettings-app
+      
+  
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
