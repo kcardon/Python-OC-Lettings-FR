@@ -5,6 +5,12 @@ FROM python:3
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+# Handling secret key
+ARG SECRET_KEY
+ENV SECRET_KEY=$SECRET_KEY
+RUN echo "SECRET_KEY is: $SECRET_KEY"
+RUN echo "SECRET_KEY_VAR is: $SECRET_KEY_VAR"
+
 # Définissez le répertoire de travail dans le conteneur
 WORKDIR /app
 
@@ -13,4 +19,8 @@ COPY . /app
 
 # Installation des dépendances Python
 RUN pip install --upgrade pip && pip install -r requirements.txt
+
+# Exécuter collectstatic
+RUN python manage.py collectstatic --noinput
+
 CMD gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:$PORT
