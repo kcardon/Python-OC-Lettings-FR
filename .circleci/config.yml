@@ -47,7 +47,7 @@ jobs:
             docker push $DOCKERHUB_USERNAME/ocr-lettings-app:latest
       - run:
           name: Install Heroku CLI
-          command: sudo curl https://cli-assets.heroku.com/install.sh | sh
+          command: curl https://cli-assets.heroku.com/install.sh | sh
       - run:
           name: Login to Heroku container registry
           command: HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login
