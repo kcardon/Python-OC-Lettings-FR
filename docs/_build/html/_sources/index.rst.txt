@@ -15,12 +15,6 @@ Description du projet
 Site web d'Orange County Lettings, start-up dans le secteur de la location de biens immobiliers. 
 L'application est destinée à la gestion des prospects et des biens immobiliers en location.
 
-https://lettings-app-6566faf2057b.herokuapp.com/
-
-.. image:: /_static/menu.png
-   :alt: Page d'accueil de l'application
-   :width: 600px
-   :align: center
 
 Guide de démarrage rapide
 ---------------------------

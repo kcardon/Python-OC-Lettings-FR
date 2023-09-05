@@ -4,6 +4,7 @@ FROM python:3
 # Variables d'environnement
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
+ENV PORT 8000
 
 # Handling secret key
 ARG SECRET_KEY
