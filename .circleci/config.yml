@@ -21,6 +21,7 @@ jobs:
       - run:
           name: Dockerhub > login, tag & push
           command: |
+            docker build -t ocr-lettings-app:latest --build-arg SECRET_KEY=${SECRET_KEY} .
             echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
             docker tag ocr-lettings-app $DOCKERHUB_USERNAME/ocr-lettings-app:latest
             docker push $DOCKERHUB_USERNAME/ocr-lettings-app:latest
