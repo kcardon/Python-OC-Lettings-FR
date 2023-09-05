@@ -29,6 +29,7 @@ jobs:
 
 
   deploy:
+    executor: docker-executor
     steps:
       - setup_remote_docker
       - restore_cache:
