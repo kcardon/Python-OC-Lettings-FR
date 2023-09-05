@@ -8,7 +8,6 @@ executors:
 jobs:
   build-and-test: 
     executor: docker-executor
-    machine: true
     steps:
       - checkout
       - run:
@@ -20,7 +19,6 @@ jobs:
 
   deploy:
     executor: docker-executor
-    machine: true
     steps:
       - run:
           name: Dockerhub > login, tag & push
