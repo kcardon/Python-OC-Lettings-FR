@@ -10,10 +10,10 @@ jobs:
       - checkout
       - run:
           name: Build Docker image
-          command: docker build -t lettings-app:latest --build-arg SECRET_KEY=${SECRET_KEY} .
+          command: docker build -t ocr-lettings-app:latest --build-arg SECRET_KEY=${SECRET_KEY} .
       - run:
           name: Run tests inside Docker image
-          command: docker run -e SECRET_KEY=${SECRET_KEY} lettings-app:latest pytest
+          command: docker run -e SECRET_KEY=${SECRET_KEY} ocr-lettings-app:latest pytest
 
   deploy:
     machine: true
@@ -32,7 +32,7 @@ jobs:
           command: HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login
       - run:
           name: tag Docker image for heroku
-          command: docker tag lettings-app:latest registry.heroku.com/lettings-app/web
+          command: docker tag ocr-lettings-app:latest registry.heroku.com/lettings-app/web
       - run:
           name: Push and release Docker image to Heroku registry
           command: |
