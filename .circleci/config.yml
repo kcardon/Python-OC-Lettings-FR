@@ -3,27 +3,44 @@ version: 2.1
 executors:
   docker-executor:
     docker:
-      - image: circleci/python:3.8
+      - image: docker:18.09.3
 
 jobs:
   build-and-test: 
     executor: docker-executor
     steps:
       - checkout
+      - setup_remote_docker
       - run:
           name: Build Docker image
           command: docker build -t ocr-lettings-app:latest --build-arg SECRET_KEY=${SECRET_KEY} .
       - run:
           name: Run tests inside Docker image
           command: docker run -e SECRET_KEY=${SECRET_KEY} ocr-lettings-app:latest pytest
+      - run:
+          name: Save Docker image to cache
+          command: |
+            docker save -o /tmp/docker-image.tar ocr-lettings-app:latest
+            gzip /tmp/docker-image.tar
+      - save_cache:
+          key: docker-image-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - /tmp/docker-image.tar.gz
+
 
   deploy:
-    executor: docker-executor
     steps:
+      - setup_remote_docker
+      - restore_cache:
+          key: docker-image-{{ .Branch }}-{{ .Revision }}
+      - run:
+          name: Load Docker image from cache
+          command: |
+            gunzip /tmp/docker-image.tar.gz
+            docker load -i /tmp/docker-image.tar
       - run:
           name: Dockerhub > login, tag & push
           command: |
-            docker build -t ocr-lettings-app:latest --build-arg SECRET_KEY=${SECRET_KEY} .
             echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
             docker tag ocr-lettings-app $DOCKERHUB_USERNAME/ocr-lettings-app:latest
             docker push $DOCKERHUB_USERNAME/ocr-lettings-app:latest
