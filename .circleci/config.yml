@@ -42,7 +42,7 @@ jobs:
 workflows:
   heroku deployment process:
     jobs:
-      - build-and-test:
+      - build-and-test
       - deploy:
           requires:
             - build-and-test
