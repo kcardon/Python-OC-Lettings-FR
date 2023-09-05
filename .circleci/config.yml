@@ -22,7 +22,7 @@ jobs:
           name: Dockerhub > login, tag & push
           command: |
             echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
-            docker tag lettings-app:latest $DOCKERHUB_USERNAME/ocr-lettings-app:latest
+            docker tag ocr-lettings-app:latest $DOCKERHUB_USERNAME/ocr-lettings-app:latest
             docker push $DOCKERHUB_USERNAME/ocr-lettings-app:latest
       - run:
           name: Install Heroku CLI
