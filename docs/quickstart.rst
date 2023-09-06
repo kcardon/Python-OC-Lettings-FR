@@ -18,7 +18,7 @@ https://lettings-app-6566faf2057b.herokuapp.com/
       https://docs.docker.com/get-docker/
     
       **Ouvrez une invite de commande puis chargez et lancez l'image**
-      - ``docker run --pull always -p 8000:8000 kcardon/oc-lettings:latest``
+      - ``docker run --pull always -p 8000:8000 kcardon/ocr-lettings-app:latest``
       Visitez `http://localhost:8000` dans un navigateur.
 
 

@@ -32,7 +32,7 @@ https://app.circleci.com/pipelines/github/kcardon/Python-OC-Lettings-FR
 https://hub.docker.com/repository/docker/kcardon/ocr-lettings-app/
 
 Commande unique pour extraire l'image docker du dockerhub et lancer l'application sur localhost:
-``docker run --pull always -p 8000:8000 kcardon/oc-lettings:latest``
+``docker run --pull always -p 8000:8000 kcardon/ocr-lettings-app:latest``
 
 * **Heroku** (https://www.heroku.com/): solution d'hébergement web.
 Le site web en production peut être consulté à l'adresse suivante:

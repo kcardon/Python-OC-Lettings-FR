@@ -21,7 +21,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Lettings" href="lettings.html" />
+    <link rel="next" title="Procédure de déploiement" href="deployment_process.html" />
     <link rel="prev" title="Guide d’utilisation" href="Guide_utilisation.html" /> 
 </head>
 
@@ -53,6 +53,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#structure-de-la-base-de-donnees-et-modeles-de-donnees">Structure de la base de données et modèles de données</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_process.html">Procédure de déploiement</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Modules:</span></p>
 <ul>
@@ -107,6 +108,19 @@
 <li><p>Application “lettings” : modèles “Address” et “Letting”.</p></li>
 <li><p>Application “profiles” : modèle “Profile”.</p></li>
 </ul>
+<p><strong>Panel d’administration</strong> :
+Visitez <cite>http://localhost:8000/admin</cite> et connectez-vous avec le nom d’utilisateur et mot de passe admin fournis.</p>
+<p><strong>Linting</strong> :
+<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/Python-OC-Lettings-FR</span></code>
+<code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">venv/bin/activate</span></code>
+<code class="docutils literal notranslate"><span class="pre">flake8</span></code></p>
+<p><strong>Tests unitaires</strong> :
+L’application intègre une couverture de tests supérieure à 80%.
+<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/Python-OC-Lettings-FR</span></code>
+<code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">venv/bin/activate</span></code>
+<code class="docutils literal notranslate"><span class="pre">pytest</span></code></p>
+<p><strong>Note pour les utilisateurs Windows</strong> :
+Utilisez PowerShell et remplacez l’activation de l’environnement virtuel par : <cite>.venvScriptsActivate.ps1</cite></p>
 </section>
 </section>
 
@@ -115,7 +129,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="Guide_utilisation.html" class="btn btn-neutral float-left" title="Guide d’utilisation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="lettings.html" class="btn btn-neutral float-right" title="Lettings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="deployment_process.html" class="btn btn-neutral float-right" title="Procédure de déploiement" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

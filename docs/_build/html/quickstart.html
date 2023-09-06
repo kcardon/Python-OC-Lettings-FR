@@ -54,6 +54,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Guide_utilisation.html">Guide d’utilisation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="techniques.html">Spécifications techniques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_process.html">Procédure de déploiement</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Modules:</span></p>
 <ul>
@@ -107,8 +108,8 @@
 </ul>
 <p>Si ce n’est pas le cas, consultez la documentation officielle de Docker pour votre système d’exploitation :
 <a class="reference external" href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/</a></p>
-<p><strong>Charger et lancer l’image</strong>
-- <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">--pull</span> <span class="pre">always</span> <span class="pre">-p</span> <span class="pre">8000:8000</span> <span class="pre">kcardon/oc-lettings:latest</span></code>
+<p><strong>Ouvrez une invite de commande puis chargez et lancez l’image</strong>
+- <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">--pull</span> <span class="pre">always</span> <span class="pre">-p</span> <span class="pre">8000:8000</span> <span class="pre">kcardon/ocr-lettings-app:latest</span></code>
 Visitez <cite>http://localhost:8000</cite> dans un navigateur.</p>
 </div></blockquote>
 </section>
@@ -124,15 +125,15 @@ Visitez <cite>http://localhost:8000</cite> dans un navigateur.</p>
 <p><strong>Etapes</strong></p>
 <ul class="simple">
 <li><dl class="simple">
-<dt><em>Cloner le repository</em> :</dt><dd><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/put/project/in</span>
-<span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/kcardon/Python-OC-Lettings-FR.git</span></code></p>
+<dt><em>Cloner le repository</em> :</dt><dd><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/put/project/in</span></code>
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/kcardon/Python-OC-Lettings-FR.git</span></code></p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><em>Créer l’environnement virtuel</em>:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/Python-OC-Lettings-FR</span>
-<span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">venv</span>
-<span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python3-venv</span></code></p>
+<dt><em>Créer l’environnement virtuel</em>:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/Python-OC-Lettings-FR</span></code>
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">venv</span></code>
+<code class="docutils literal notranslate"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python3-venv</span></code></p>
 </dd>
 </dl>
 </li>

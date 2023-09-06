@@ -113,7 +113,7 @@ https://app.circleci.com/pipelines/github/kcardon/Python-OC-Lettings-FR
 * **DockerHub** (https://hub.docker.com/): service de cloud qui permet de stocker et de partager l'image de conteneur Docker. 
 https://hub.docker.com/repository/docker/kcardon/ocr-lettings-app/
 Commande unique pour extraire l'image docker du dockerhub et lancer l'application sur localhost:
-`docker run --pull always -p 8000:8000 kcardon/oc-lettings:latest`
+`docker run --pull always -p 8000:8000 kcardon/ocr-lettings-app:latest`
 
 * **Heroku** (https://www.heroku.com/): solution d'hébergement web.
 Le site web en production peut être consulté à l'adresse suivante: https://lettings-app-6566faf2057b.herokuapp.com/

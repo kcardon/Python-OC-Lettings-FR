@@ -92,14 +92,12 @@
 <section id="recapitulatif-du-processus-de-deploiement">
 <h2>Récapitulatif du processus de déploiement<a class="headerlink" href="#recapitulatif-du-processus-de-deploiement" title="Permalink to this heading"></a></h2>
 <p>Le processus de déploiement de l’application s’appuie sur une approche CI/CD, qui comprend les étapes suivantes :</p>
-<ol class="arabic simple">
-<li><p><strong>Compilation et Tests</strong> :
+<p>1. <strong>Compilation et Tests</strong>
 * A chaque push sur le repository GitHub, l’image docker est créée, à partir de laquelle les tests sont exécutés et le code est compilé.
-* La suite du déploiement n’est planifié qu’en cas de réussite des étapes de test.</p></li>
-<li><p><strong>Déploiement</strong> :
+* La suite du déploiement n’est planifié qu’en cas de réussite des étapes de test.</p>
+<p>2. <strong>Déploiement</strong>
 * Si la conteneurisation est réussie, l’image est mise à jour sur le DockerHub ainsi que sur Heroku.
-* Seules les modifications de la branche master déclenchent le déploiement. Les autres branches sont uniquement testées.</p></li>
-</ol>
+* Seules les modifications de la branche master déclenchent le déploiement. Les autres branches sont uniquement testées.</p>
 </section>
 <section id="prerequis">
 <h2>Prérequis<a class="headerlink" href="#prerequis" title="Permalink to this heading"></a></h2>
@@ -122,7 +120,7 @@
 </ul>
 <p><a class="reference external" href="https://hub.docker.com/repository/docker/kcardon/ocr-lettings-app/">https://hub.docker.com/repository/docker/kcardon/ocr-lettings-app/</a></p>
 <p>Commande unique pour extraire l’image docker du dockerhub et lancer l’application sur localhost:
-<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">--pull</span> <span class="pre">always</span> <span class="pre">-p</span> <span class="pre">8000:8000</span> <span class="pre">kcardon/oc-lettings:latest</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">--pull</span> <span class="pre">always</span> <span class="pre">-p</span> <span class="pre">8000:8000</span> <span class="pre">kcardon/ocr-lettings-app:latest</span></code></p>
 <ul class="simple">
 <li><p><strong>Heroku</strong> (<a class="reference external" href="https://www.heroku.com/">https://www.heroku.com/</a>): solution d’hébergement web.</p></li>
 </ul>
