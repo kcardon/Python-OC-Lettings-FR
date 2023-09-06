@@ -10,9 +10,6 @@ import sys
 sys.path.append(os.path.abspath('../'))
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'oc_lettings_site.settings')
 
-import django
-django.setup()
-
 project = 'lettings-app'
 copyright = '2023, kcardon'
 author = 'kcardon'
