@@ -5,13 +5,13 @@ Récapitulatif du processus de déploiement
 ^^^^^^^^^^
 Le processus de déploiement de l'application s'appuie sur une approche CI/CD, qui comprend les étapes suivantes :
 
-1. **Compilation et Tests** : 
-   - A chaque push sur le repository GitHub, l'image docker est créée, à partir de laquelle les tests sont exécutés et le code est compilé.
-   - La suite du déploiement n'est planifié qu'en cas de réussite des étapes de test.
+1. **Compilation et Tests**
+* A chaque push sur le repository GitHub, l'image docker est créée, à partir de laquelle les tests sont exécutés et le code est compilé.
+* La suite du déploiement n'est planifié qu'en cas de réussite des étapes de test.
 
-2. **Déploiement** :
-   - Si la conteneurisation est réussie, l'image est mise à jour sur le DockerHub ainsi que sur Heroku.
-   - Seules les modifications de la branche master déclenchent le déploiement. Les autres branches sont uniquement testées.
+2. **Déploiement**
+* Si la conteneurisation est réussie, l'image est mise à jour sur le DockerHub ainsi que sur Heroku.
+* Seules les modifications de la branche master déclenchent le déploiement. Les autres branches sont uniquement testées.
 
 Prérequis
 ^^^^^^^^^^

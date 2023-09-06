@@ -17,7 +17,7 @@ https://lettings-app-6566faf2057b.herokuapp.com/
       Si ce n'est pas le cas, consultez la documentation officielle de Docker pour votre système d'exploitation : 
       https://docs.docker.com/get-docker/
     
-      **Charger et lancer l'image**
+      **Ouvrez une invite de commande puis chargez et lancez l'image**
       - ``docker run --pull always -p 8000:8000 kcardon/oc-lettings:latest``
       Visitez `http://localhost:8000` dans un navigateur.
 
@@ -35,12 +35,12 @@ https://lettings-app-6566faf2057b.herokuapp.com/
       **Etapes**
 
       - *Cloner le repository* :
-            ``cd /path/to/put/project/in
-            git clone https://github.com/kcardon/Python-OC-Lettings-FR.git``
+            ``cd /path/to/put/project/in``
+            ``git clone https://github.com/kcardon/Python-OC-Lettings-FR.git``
       - *Créer l'environnement virtuel*:
-            ``cd /path/to/Python-OC-Lettings-FR
-            python -m venv venv
-            apt-get install python3-venv``
+            ``cd /path/to/Python-OC-Lettings-FR``
+            ``python -m venv venv``
+            ``apt-get install python3-venv``
       - *Activer l'environnement*:
              ``source venv/bin/activate`` (macOS / Linux)
              ``.\venv\Scripts\Activate.ps1`` (Windows)
