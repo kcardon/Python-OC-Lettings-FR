@@ -112,6 +112,8 @@ https://app.circleci.com/pipelines/github/kcardon/Python-OC-Lettings-FR
 
 * **DockerHub** (https://hub.docker.com/): service de cloud qui permet de stocker et de partager l'image de conteneur Docker. 
 https://hub.docker.com/repository/docker/kcardon/ocr-lettings-app/
+Commande unique pour extraire l'image docker du dockerhub et lancer l'application sur localhost:
+`docker run --pull always -p 8000:8000 kcardon/oc-lettings:latest`
 
 * **Heroku** (https://www.heroku.com/): solution d'hébergement web.
 Le site web en production peut être consulté à l'adresse suivante: https://lettings-app-6566faf2057b.herokuapp.com/
@@ -122,7 +124,7 @@ Le site web en production peut être consulté à l'adresse suivante: https://le
 
 1. Suivez les étapes du chapitre précédent liées au développement local. Assurez-vous d'avoir configuré l'application pour la production.
 
-2. Pousser la branche master mise à jour (ou effectuer un merge d'une branche séparée vers la branche master) lancera la pipeline CI/CD de CircleCi.
+2. Poussez la branche master mise à jour (ou effectuez un merge d'une branche séparée vers la branche master). Cela lancera automatiquement la pipeline CI/CD de CircleCi.
 
 3. Connectez-vous sur CircleCi afin de suivre le bon déroulement de la Pipeline (build, tests, conteneurisation, déploiement) et d'être en mesure de consulter les logs d'erreurs le cas échéant.
 

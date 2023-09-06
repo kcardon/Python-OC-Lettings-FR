@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Procédure de déploiement &mdash; lettings-app 2.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Lettings" href="lettings.html" />
+    <link rel="prev" title="Spécifications techniques" href="techniques.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            lettings-app
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table des matières:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Guide de démarrage rapide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Guide_utilisation.html">Guide d’utilisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="techniques.html">Spécifications techniques</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Procédure de déploiement</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#recapitulatif-du-processus-de-deploiement">Récapitulatif du processus de déploiement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prerequis">Prérequis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#etapes-de-deploiement">Étapes de déploiement</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modules:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lettings.html">Lettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profiles.html">Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oc_lettings_site.html">Oc_lettings_site</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">lettings-app</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Procédure de déploiement</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/deployment_process.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="procedure-de-deploiement">
+<h1>Procédure de déploiement<a class="headerlink" href="#procedure-de-deploiement" title="Permalink to this heading"></a></h1>
+<section id="recapitulatif-du-processus-de-deploiement">
+<h2>Récapitulatif du processus de déploiement<a class="headerlink" href="#recapitulatif-du-processus-de-deploiement" title="Permalink to this heading"></a></h2>
+<p>Le processus de déploiement de l’application s’appuie sur une approche CI/CD, qui comprend les étapes suivantes :</p>
+<ol class="arabic simple">
+<li><p><strong>Compilation et Tests</strong> :
+* A chaque push sur le repository GitHub, l’image docker est créée, à partir de laquelle les tests sont exécutés et le code est compilé.
+* La suite du déploiement n’est planifié qu’en cas de réussite des étapes de test.</p></li>
+<li><p><strong>Déploiement</strong> :
+* Si la conteneurisation est réussie, l’image est mise à jour sur le DockerHub ainsi que sur Heroku.
+* Seules les modifications de la branche master déclenchent le déploiement. Les autres branches sont uniquement testées.</p></li>
+</ol>
+</section>
+<section id="prerequis">
+<h2>Prérequis<a class="headerlink" href="#prerequis" title="Permalink to this heading"></a></h2>
+<p>Disposer d’un accès aux applicatifs suivants:</p>
+<ul class="simple">
+<li><p><strong>GitHub</strong> (<a class="reference external" href="https://github.com/">https://github.com/</a>): assure la gestion de version du code source à travers des dépôts Git. Il offre des fonctionnalités de collaboration telles que le suivi des problèmes, la revue de code et la gestion de projets.</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/kcardon/Python-OC-Lettings-FR.git">https://github.com/kcardon/Python-OC-Lettings-FR.git</a></p>
+<ul class="simple">
+<li><p><strong>Sentry</strong> (<a class="reference external" href="https://sentry.io/">https://sentry.io/</a>): plateforme de surveillance des erreurs qui donne une visibilité en temps réel sur les crashs et problèmes de performance.</p></li>
+</ul>
+<p><a class="reference external" href="https://cardon.sentry.io/projects/python-django/?project=4505680878043136">https://cardon.sentry.io/projects/python-django/?project=4505680878043136</a></p>
+<ul class="simple">
+<li><p><strong>CircleCI</strong>: système d’intégration continue et de livraison continue (CI/CD) qui permet d’automatiser le processus de build, de test, et de déploiement des applications à chaque changement apporté à la branche master du code source.</p></li>
+</ul>
+<p><a class="reference external" href="https://app.circleci.com/pipelines/github/kcardon/Python-OC-Lettings-FR">https://app.circleci.com/pipelines/github/kcardon/Python-OC-Lettings-FR</a></p>
+<ul class="simple">
+<li><p><strong>Docker Desktop</strong>: permet de construire, partager et exécuter des applications dans des conteneurs. Il s’intègre directement à DockerHub.</p></li>
+<li><p><strong>DockerHub</strong> (<a class="reference external" href="https://hub.docker.com/">https://hub.docker.com/</a>): service de cloud qui permet de stocker et de partager l’image de conteneur Docker.</p></li>
+</ul>
+<p><a class="reference external" href="https://hub.docker.com/repository/docker/kcardon/ocr-lettings-app/">https://hub.docker.com/repository/docker/kcardon/ocr-lettings-app/</a></p>
+<p>Commande unique pour extraire l’image docker du dockerhub et lancer l’application sur localhost:
+<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">--pull</span> <span class="pre">always</span> <span class="pre">-p</span> <span class="pre">8000:8000</span> <span class="pre">kcardon/oc-lettings:latest</span></code></p>
+<ul class="simple">
+<li><p><strong>Heroku</strong> (<a class="reference external" href="https://www.heroku.com/">https://www.heroku.com/</a>): solution d’hébergement web.</p></li>
+</ul>
+<p>Le site web en production peut être consulté à l’adresse suivante:</p>
+<p><a class="reference external" href="https://lettings-app-6566faf2057b.herokuapp.com/">https://lettings-app-6566faf2057b.herokuapp.com/</a></p>
+</section>
+<section id="etapes-de-deploiement">
+<h2>Étapes de déploiement<a class="headerlink" href="#etapes-de-deploiement" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Suivez les étapes du chapitre précédent liées au développement local. Assurez-vous d’avoir configuré l’application pour la production.</p></li>
+<li><p>Poussez la branche master mise à jour (ou effectuez un merge d’une branche séparée vers la branche master). Cela lancera automatiquement la pipeline CI/CD de CircleCi.</p></li>
+<li><p>Connectez-vous sur CircleCi afin de suivre le bon déroulement de la Pipeline (build, tests, conteneurisation, déploiement) et d’être en mesure de consulter les logs d’erreurs le cas échéant.</p></li>
+<li><p>Connectez-vous sur DockerHub afin de vous assurer de la bonne mise à jour de l’image Docker lors du déploiement.</p></li>
+<li><p>Connectez-vous sur Heroku afin de contrôler le déploiement effectif de l’image Docker sur l’hébergeur.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="techniques.html" class="btn btn-neutral float-left" title="Spécifications techniques" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="lettings.html" class="btn btn-neutral float-right" title="Lettings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, kcardon.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

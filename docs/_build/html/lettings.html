@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lettings &mdash; lettings-app 2.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Profiles" href="profiles.html" />
+    <link rel="prev" title="Procédure de déploiement" href="deployment_process.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            lettings-app
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table des matières:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Guide de démarrage rapide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Guide_utilisation.html">Guide d’utilisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="techniques.html">Spécifications techniques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_process.html">Procédure de déploiement</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modules:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lettings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-lettings.models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lettings.models.Address"><code class="docutils literal notranslate"><span class="pre">Address</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.models.Address.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Address.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.models.Address.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Address.MultipleObjectsReturned</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#lettings.models.Letting"><code class="docutils literal notranslate"><span class="pre">Letting</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.models.Letting.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Letting.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.models.Letting.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Letting.MultipleObjectsReturned</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-lettings.views">Views</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lettings.views.index"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lettings.views.letting"><code class="docutils literal notranslate"><span class="pre">letting()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-lettings.tests">Tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lettings.tests.LettingTestCases"><code class="docutils literal notranslate"><span class="pre">LettingTestCases</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.tests.LettingTestCases.setUp"><code class="docutils literal notranslate"><span class="pre">LettingTestCases.setUp()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="profiles.html">Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oc_lettings_site.html">Oc_lettings_site</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">lettings-app</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Lettings</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/lettings.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="lettings">
+<h1>Lettings<a class="headerlink" href="#lettings" title="Permalink to this heading"></a></h1>
+<section id="module-lettings.models">
+<span id="models"></span><h2>Models<a class="headerlink" href="#module-lettings.models" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="lettings.models.Address">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lettings.models.</span></span><span class="sig-name descname"><span class="pre">Address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lettings/models.html#Address"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lettings.models.Address" title="Permalink to this definition"></a></dt>
+<dd><p>Model representing a physical address.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="lettings.models.Address.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#lettings.models.Address.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="lettings.models.Address.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#lettings.models.Address.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lettings.models.Letting">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lettings.models.</span></span><span class="sig-name descname"><span class="pre">Letting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lettings/models.html#Letting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lettings.models.Letting" title="Permalink to this definition"></a></dt>
+<dd><p>Model representing a property letting.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="lettings.models.Letting.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#lettings.models.Letting.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="lettings.models.Letting.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#lettings.models.Letting.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-lettings.views">
+<span id="views"></span><h2>Views<a class="headerlink" href="#module-lettings.views" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="lettings.views.index">
+<span class="sig-prename descclassname"><span class="pre">lettings.views.</span></span><span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lettings/views.html#index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lettings.views.index" title="Permalink to this definition"></a></dt>
+<dd><p>View for displaying a list of all lettings.
+Retrieves all the Letting objects from the database
+and passes them to the ‘lettings/index.html’ template.
+Args:</p>
+<blockquote>
+<div><p>request: The incoming HTTP request.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>HttpResponse object with the rendered template.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lettings.views.letting">
+<span class="sig-prename descclassname"><span class="pre">lettings.views.</span></span><span class="sig-name descname"><span class="pre">letting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">letting_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lettings/views.html#letting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lettings.views.letting" title="Permalink to this definition"></a></dt>
+<dd><p>View for displaying the details of a specific letting.
+Retrieves a Letting object based on the given <cite>letting_id</cite>
+and passes its details to the ‘lettings/letting.html’ template.
+Args:</p>
+<blockquote>
+<div><p>request: The incoming HTTP request.
+letting_id: ID of the Letting object to retrieve.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>HttpResponse object with the rendered template.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-lettings.tests">
+<span id="tests"></span><h2>Tests<a class="headerlink" href="#module-lettings.tests" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="lettings.tests.LettingTestCases">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lettings.tests.</span></span><span class="sig-name descname"><span class="pre">LettingTestCases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lettings/tests.html#LettingTestCases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lettings.tests.LettingTestCases" title="Permalink to this definition"></a></dt>
+<dd><p>Test cases for lettings:index, list views and models.
+Every test assert the correct status code, the template used and the context content.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="lettings.tests.LettingTestCases.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lettings/tests.html#LettingTestCases.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lettings.tests.LettingTestCases.setUp" title="Permalink to this definition"></a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="deployment_process.html" class="btn btn-neutral float-left" title="Procédure de déploiement" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="profiles.html" class="btn btn-neutral float-right" title="Profiles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, kcardon.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
