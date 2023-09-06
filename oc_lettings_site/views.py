@@ -49,3 +49,7 @@ def handler500(request):
 def trigger_500_error(request):
     """This view raises an exception to trigger a 500 error for test cases."""
     raise Exception("500-error")
+
+
+def trigger_error(request):
+    division_by_zero = 1 / 0
