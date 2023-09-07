@@ -12,9 +12,10 @@ Welcome to lettings-app's documentation!
    :width: 600px
    :align: center
 
-|
+
 Description du projet
 -------------------------
+
 L'application fournit une solution de site web pour Orange County Lettings, start-up dans le secteur de la location de biens immobiliers. 
 
 Elle est destinée à la gestion des prospects et des biens immobiliers en location.
@@ -26,6 +27,7 @@ https://lettings-app-6566faf2057b.herokuapp.com/
    :caption: Table des matières:
 
    quickstart
+   Installation
    Guide_utilisation
    techniques
    deployment_process
