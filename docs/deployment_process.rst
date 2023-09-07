@@ -1,8 +1,8 @@
 Procédure de déploiement
----------
+------------------------------
 
 Récapitulatif du processus de déploiement
-^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Le processus de déploiement de l'application s'appuie sur une approche CI/CD, qui comprend les étapes suivantes :
 
 1. **Compilation et Tests**
@@ -35,6 +35,7 @@ Commande unique pour extraire l'image docker du dockerhub et lancer l'applicatio
 ``docker run --pull always -p 8000:8000 kcardon/ocr-lettings-app:latest``
 
 * **Heroku** (https://www.heroku.com/): solution d'hébergement web.
+  
 Le site web en production peut être consulté à l'adresse suivante:
 
 https://lettings-app-6566faf2057b.herokuapp.com/
