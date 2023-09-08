@@ -25,6 +25,5 @@ Par exemple, cliquez sur la location "Underground Hygge" et vous accéderez aux 
 .. image:: /_static/letting.png
   :width: 250
 
-
 * A tout moment, cliquez sur "Home" ou sur le logo en haut à gauche pour revenir à la page d'accueil.
 
