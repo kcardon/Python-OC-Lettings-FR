@@ -14,17 +14,21 @@ Installation
       **Etapes**
 
       - *Cloner le repository* :
-            ``cd /path/to/put/project/in``
-            ``git clone https://github.com/kcardon/Python-OC-Lettings-FR.git``
+| ``cd /path/to/put/project/in``
+| ``git clone https://github.com/kcardon/Python-OC-Lettings-FR.git``
+
       - *Créer l'environnement virtuel*:
-            ``cd /path/to/Python-OC-Lettings-FR``
-            ``python -m venv venv``
-            ``apt-get install python3-venv``
+| ``cd /path/to/Python-OC-Lettings-FR``
+| ``python -m venv venv``
+| ``apt-get install python3-venv``
+ 
       - *Activer l'environnement*:
-             ``source venv/bin/activate`` (macOS / Linux)
-             ``.\venv\Scripts\Activate.ps1`` (Windows)
+| ``source venv/bin/activate`` (macOS / Linux)
+| ``.\venv\Scripts\Activate.ps1`` (Windows)
+
       - *Exécuter le site*
-            ``cd /path/to/Python-OC-Lettings-FR``
-            ``pip install --requirement requirements.txt``
-            ``python manage.py runserver``
+| ``cd /path/to/Python-OC-Lettings-FR``
+| ``pip install --requirement requirements.txt``
+| ``python manage.py runserver``
+ 
             Visitez `http://localhost:8000` dans un navigateur.

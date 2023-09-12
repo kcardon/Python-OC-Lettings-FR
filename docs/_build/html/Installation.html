@@ -99,34 +99,44 @@
 <p>Dans le reste de la documentation sur le développement local, il est supposé que la commande <cite>python</cite> de votre OS shell exécute l’interpréteur Python ci-dessus (à moins qu’un environnement virtuel ne soit activé).</p>
 <p><strong>Etapes</strong></p>
 <ul class="simple">
-<li><dl class="simple">
-<dt><em>Cloner le repository</em> :</dt><dd><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/put/project/in</span></code>
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/kcardon/Python-OC-Lettings-FR.git</span></code></p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><em>Créer l’environnement virtuel</em>:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/Python-OC-Lettings-FR</span></code>
-<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">venv</span></code>
-<code class="docutils literal notranslate"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python3-venv</span></code></p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><em>Activer l’environnement</em>:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">venv/bin/activate</span></code> (macOS / Linux)
-<code class="docutils literal notranslate"><span class="pre">.\venv\Scripts\Activate.ps1</span></code> (Windows)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><em>Exécuter le site</em></dt><dd><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/Python-OC-Lettings-FR</span></code>
-<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--requirement</span> <span class="pre">requirements.txt</span></code>
-<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">runserver</span></code>
-Visitez <cite>http://localhost:8000</cite> dans un navigateur.</p>
-</dd>
-</dl>
-</li>
+<li><p><em>Cloner le repository</em> :</p></li>
 </ul>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/put/project/in</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/kcardon/Python-OC-Lettings-FR.git</span></code></div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>Créer l’environnement virtuel</em>:</p></li>
+</ul>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/Python-OC-Lettings-FR</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">venv</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python3-venv</span></code></div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>Activer l’environnement</em>:</p></li>
+</ul>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">venv/bin/activate</span></code> (macOS / Linux)</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">.\venv\Scripts\Activate.ps1</span></code> (Windows)</div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>Exécuter le site</em></p></li>
+</ul>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/Python-OC-Lettings-FR</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--requirement</span> <span class="pre">requirements.txt</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">runserver</span></code></div>
+</div>
+<blockquote>
+<div><p>Visitez <cite>http://localhost:8000</cite> dans un navigateur.</p>
 </div></blockquote>
 </section>
 </section>
