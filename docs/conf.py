@@ -5,11 +5,10 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 import os
 import sys
+import django
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "oc_lettings_site.settings")
 sys.path.append(os.path.abspath("../"))
-
-import django
 
 django.setup()
 

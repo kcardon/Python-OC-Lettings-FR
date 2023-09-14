@@ -12,7 +12,8 @@ class Profile(models.Model):
 
     Attributes:
         user (OneToOneField): A reference to the associated User object through a one-to-one relationship.
-        favorite_city (CharField): A user's favorite city, with a maximum length of 64 characters. It's an optional field.
+        favorite_city (CharField): A user's favorite city, with a maximum length of 64 characters.
+        It's an optional field.
 
     Returns:
         str: A string representation of the model, which is the username of the associated user.
